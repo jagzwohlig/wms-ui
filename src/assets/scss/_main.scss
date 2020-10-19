@@ -1,0 +1,432 @@
+@import "src/assets/scss/variable.scss";
+@import "src/assets/scss/mains";
+@import "src/assets/scss/template/responsive";
+@import "src/assets/scss/custom-switch";
+nav li:hover .dropdown-menu {
+    display: block;
+}
+
+.btn,
+a,
+[ui-sref] {
+    cursor: pointer;
+    transition: all ease 300ms;
+    &:focus {
+        outline: none !important;
+    }
+}
+
+//bootstrap forms
+.btn,
+.form-control,
+.input-group-lg>.form-control,
+.input-group-lg>.input-group-addon,
+.input-group-lg>.input-group-btn>.btn,
+.input-lg {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-control.un-disable {
+    background-color: $white;
+}
+
+.form-control:focus {
+    border-color: $brand-primary;
+    outline: 0;
+    box-shadow: none;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.logo img {
+    max-height: 100%;
+    width: auto;
+}
+
+.menu-options {
+    margin-top: 15px;
+}
+
+.admin-details>i {
+    color: $grey-color;
+    text-transform: capitalize;
+}
+
+.btn.btn-round {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.info-holder {
+    background: #ffffff none repeat scroll 0 0;
+    position: relative;
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    height: 87px;
+    .btn {
+        font-size: 12px;
+        min-width: 110px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.panel-content {
+    padding-top: 26px;
+}
+
+.mt-18 {
+    margin-top: 18px;
+}
+
+.side-header,
+.top-bar {
+    // z-index: 99 !important;
+    .nav-width {
+        width: 0px !important;
+    }
+}
+
+.modal-content {
+    overflow: hidden;
+    top: 50px;
+}
+
+.modal-footer {
+    padding: 10px 15px;
+}
+
+.mce-panel {
+    background-color: $white !important;
+    border-radius: 5px;
+    border-color: $border-color !important;
+}
+
+.mce-btn {
+    background: $white !important;
+}
+
+.nav-tabs {
+    border: 0;
+    >li.active {
+        >a:focus,
+        >a:hover,
+        >a {
+            color: $red;
+            border: 0;
+            border-bottom: 5px solid $red;
+        }
+    }
+    >li>a {
+        border: 0;
+        border-bottom: 5px solid transparent;
+        border-radius: 0;
+        &:focus,
+        &:hover {
+            background: transparent;
+            color: inherit;
+        }
+    }
+}
+
+.table .btn {
+    padding: 3px 6px;
+    text-transform: capitalize;
+}
+
+.wd20 {
+    width: 20%;
+}
+
+.wd79 {
+    width: 79%;
+}
+
+.wd30 {
+    width: 30%;
+}
+
+.d-block {
+    display: block;
+}
+
+.ui-select {
+    .form-control {
+        width: 100% !important;
+        height: 34px;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+form.mr-form {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+form.search-form {
+    border-radius: 0;
+    height: 37px;
+    >input {
+        padding: 7px 26px 8px 10px;
+        font-size: 14px;
+    }
+}
+
+.heading-profile>h2 {
+    width: auto;
+}
+
+.ats-switch {
+    border-color: #d4d4d4;
+}
+
+.ats-switch .switch-right {
+    color: $grey-color;
+}
+
+.btn-upload {
+    position: relative;
+    input[type="file"] {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
+.tableTotal {
+    font-size: 12px;
+    padding: 2px;
+}
+
+.side-header {
+    overflow-y: auto;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.normal {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.table-input {
+    .form-control {
+        height: 22px;
+        padding: 0 5px;
+    }
+    .form-control[readonly] {
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.breadcrumbs {
+    display: none;
+}
+
+.side-menus nav>ul {
+    padding-bottom: 66px;
+}
+
+.hover-btn {
+    td {
+        vertical-align: middle !important;
+    }
+    tr {
+        .btn-show {
+            opacity: 0;
+            transition: all 300ms ease;
+        }
+        &:hover {
+            .btn-show {
+                .side-menus {
+                    a {
+                        color: $black;
+                        font-size: 14px;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                        color: $black;
+                        border-left: 5px solid $blue;
+                    }
+                }
+                opacity: 1;
+            }
+            td {
+                background-color: #f8f8f8;
+            }
+        }
+    }
+    .btn {
+        padding: 6px;
+    }
+}
+
+.searchbox {
+    width: 200px;
+    display: inline-block;
+    margin-right: 10px;
+    .form-control {
+        background: transparent;
+        border-color: $white;
+        border-radius: 10px;
+        color: $white;
+        &::-webkit-input-placeholder {
+            color: $white;
+        }
+    }
+}
+
+.success {
+    color: $brand-success;
+}
+
+.danger {
+    color: $brand-danger;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.widget-title>h3 {
+    float: none;
+    padding-right: 0px;
+}
+
+body {
+    overflow: visible !important;
+}
+
+.logo {
+    width: 160px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.menu-options {
+    // margin-top: -30px;
+    margin-top: 15px;
+}
+
+.menu-action {
+    height: 12px; // left: 37px;
+    left: 0px;
+}
+
+.hidden {
+    display: none;
+}
+
+.main-sidenav {
+    .sidenav-part {
+        padding: 106px 50px 110px 50px;
+        transition: 0.5s;
+    }
+}
+
+.icon-active-color {
+    color: $black;
+    text-decoration: none;
+    .router-link-active {
+        .link-text {
+            color: $black;
+            text-decoration: none;
+            border-left: 5px solid $blue !important; // -moz-box-shadow: inset 0 0 5px 5px #888;
+            // -webkit-box-shadow: inset 0 0 5px 5px#888;
+            box-shadow: inset 0px 0px 5px 5px #e8e2e2;
+            padding: 10px;
+        }
+    }
+}
+
+//this is use for error msg
+.formPart {
+    .error {
+        color: $red;
+    }
+    .pass-box {
+        position: relative;
+    }
+    .input-group-addon {
+        position: absolute;
+        bottom: 7px;
+        right: 10px;
+    }
+}
+
+// deletemodal html 
+.deleteModal{
+.btn .b-icon.bi,
+.nav-link .b-icon.bi,
+.dropdown-toggle .b-icon.bi,
+.dropdown-item .b-icon.bi,
+.input-group-text .b-icon.bi {
+    vertical-align: inherit !important;
+}
+}
+
+
+.modal-content {
+    .modal-header {
+        border-bottom: none !important
+    }
+}
+
+//its using for menu link
+.side-menus {
+    a {
+        color: $black;
+        font-size: 14px;
+    }
+    a:hover {
+        color: $black;
+        text-decoration: none;
+    }
+}
+
+.nav-width {
+    width: 0px !important;
+}
+
+//header.htm
+/* Start writing scss here */
+
+@import "fancybox-override";
+@import "other/mobile";
