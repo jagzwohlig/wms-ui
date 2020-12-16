@@ -1,36 +1,35 @@
-import axios from 'axios';
+import axios from "axios";
 
-const adminUrl = 'http://localhost:3000/';
+const adminUrl = "https://transport.wohlig.in/";
 // const uploadUrl = 'http://localhost:1330/';
 
 export default {
-
   /* USER LOGIN */
   checkUserLogin(data, callback) {
     // `${adminUrl}user?email=${data.email}&password=${data.password}`
-    return axios.get(`${adminUrl}user`, {
-      params: {
-        email: data.email,
-        password: data.password,
-      }
-    })
-      .then((result) => {
+    return axios
+      .get(`${adminUrl}user`, {
+        params: {
+          email: data.email,
+          password: data.password
+        }
+      })
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
-
 
   /* USER CRUD START */
   showUsersData(data, callback) {
     return axios
       .post(`${adminUrl}user/getAllUsers`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -38,10 +37,10 @@ export default {
   createUser(data, callback) {
     return axios
       .post(`${adminUrl}user`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -49,10 +48,10 @@ export default {
   getUserDataById(id, callback) {
     return axios
       .get(`${adminUrl}user/${id}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -60,10 +59,10 @@ export default {
   editUser(data, callback) {
     return axios
       .patch(`${adminUrl}user/${data.id}`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -71,27 +70,26 @@ export default {
   deleteUser(data, callback) {
     return axios
       .delete(`${adminUrl}user/${data}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
   /* USER CRUD END */
 
-
   /* COMPANY CRUD START */
   /* 
-    comapny select bind.
+    bind company select option.
   */
   getAllCompaniesData(callback) {
     return axios
       .get(`${adminUrl}company/`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -99,10 +97,10 @@ export default {
   showCompanyData(data, callback) {
     return axios
       .post(`${adminUrl}company/getAllcompany`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -110,10 +108,10 @@ export default {
   createCompany(data, callback) {
     return axios
       .post(`${adminUrl}company`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -121,10 +119,10 @@ export default {
   getCompanyDataById(id, callback) {
     return axios
       .get(`${adminUrl}company/${id}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -132,10 +130,10 @@ export default {
   editCompany(data, callback) {
     return axios
       .patch(`${adminUrl}company/${data.id}`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -143,24 +141,23 @@ export default {
   deleteCompany(data, callback) {
     return axios
       .delete(`${adminUrl}company/${data}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
   /* COMPANY CRUD END */
 
-
   /* INBOUND CRUD START */
   showInboundData(data, callback) {
     return axios
       .post(`${adminUrl}inbound/getAllInBounds`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -168,10 +165,10 @@ export default {
   createInBound(data, callback) {
     return axios
       .post(`${adminUrl}inbound`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -179,6 +176,17 @@ export default {
   getInboundById(id, callback) {
     return axios
       .get(`${adminUrl}inbound/${id}`)
+      .then(result => {
+        callback(null, result);
+      })
+      .catch(err => {
+        callback(err.response);
+      });
+  },
+
+  editInbound(data, callback) {
+    return axios
+      .patch(`${adminUrl}inbound/${data.id}`, data)
       .then((result) => {
         callback(null, result);
       })
@@ -188,15 +196,14 @@ export default {
   },
   /* INBOUND CRUD END */
 
-
   /* OUTBOUND CRUD START */
   showOutboundData(data, callback) {
     return axios
       .post(`${adminUrl}outbound/getAllOutBounds`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -204,10 +211,10 @@ export default {
   createOutbound(data, callback) {
     return axios
       .post(`${adminUrl}outbound`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -215,10 +222,10 @@ export default {
   getOutboundDataById(id, callback) {
     return axios
       .get(`${adminUrl}outbound/${id}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -226,10 +233,10 @@ export default {
   editOutbound(data, callback) {
     return axios
       .patch(`${adminUrl}outbound/${data.id}`, data)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
   },
@@ -237,13 +244,13 @@ export default {
   deleteOutbound(data, callback) {
     return axios
       .delete(`${adminUrl}outbound/${data}`)
-      .then((result) => {
+      .then(result => {
         callback(null, result);
       })
-      .catch((err) => {
+      .catch(err => {
         callback(err.response);
       });
-  },
+  }
 
   /* OUTBOUND CRUD END */
-}
+};

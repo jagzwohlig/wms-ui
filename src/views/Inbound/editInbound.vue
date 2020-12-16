@@ -452,7 +452,6 @@ export default {
   methods: {
     //this method use for validation error
     setTouch(fields) {
-      console.log("demo");
       if (fields === "company") {
         this.$v.details.company.$touch();
       } else if (fields === "inBondDate") {
@@ -483,17 +482,22 @@ export default {
     },
     getParticularInboundById() {
       service.getInboundById(this.$route.params.id, (err, result) => {
-        console.log(result.data);
+        console.log("result:---->", result);
+        console.log(
+          "result:---->",
+          moment(result.data.data.inBondDate).format("DD-MM-YYYY")
+        );
+
         if (result.status === 200) {
           this.details = result.data.data;
           this.details.inBondDate = moment(result.data.data.inBondDate).format(
-            "DD-MMM-YYYY"
+            "DD-MM-YYYY"
           );
           this.details.expDate = moment(result.data.data.expDate).format(
-            "DD-MMM-YYYY"
+            "DD-MM-YYYY"
           );
           this.details.boeDate = moment(result.data.data.boeDate).format(
-            "DD-MMM-YYYY"
+            "DD-MM-YYYY"
           );
         } else {
           this.$toaster.error("Something went worng");
@@ -512,6 +516,19 @@ export default {
       } else {
         // do your submit logic here
         this.submitStatus = "OK";
+
+        this.details.id = this.$route.params.id;
+        service.editInbound(this.details, (err, result) => {
+          if (result.status === 200) {
+            this.noDataFound = false;
+            this.details = result.data.data;
+            this.$toaster.success("Inbound Updated Successfully");
+            this.$router.push("/viewInbound");
+          } else {
+            this.noDataFound = true;
+            this.details = {};
+          }
+        });
       }
     },
     //this method use for cancel button
